@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Last.fm Wrapped — one_of_many</title>
+    <meta name="description" content="Estadísticas musicales personales de one_of_many en Last.fm desde 2010.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Favicon: Last.fm red dot -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23d4145a'/></svg>">
+</head>
+<body>
+
+<!-- ── Full-screen loader ──────────────────────────────── -->
+<div id="loader">
+    <div class="spinner"></div>
+    <p class="loader-text">Cargando desde Last.fm…</p>
+</div>
+
+<!-- ── App shell ──────────────────────────────────────── -->
+<div class="app-wrapper">
+
+    <!-- ── Sidebar ──────────────────────────────────── -->
+    <aside class="sidebar">
+
+        <div class="sidebar-header">
+            <div class="logo">
+                <span class="logo-dot"></span>
+                Last.fm Wrapped
+            </div>
+        </div>
+
+        <!-- Profile -->
+        <section id="profile-section">
+            <img id="profile-avatar" class="profile-avatar" src="" alt="Avatar">
+            <p id="profile-name" class="profile-name">—</p>
+            <p id="profile-username" class="profile-username">—</p>
+            <div class="profile-stats">
+                <div class="stat-row">
+                    <span class="stat-label">Total scrobbles</span>
+                    <span class="stat-value" id="profile-scrobbles">—</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">En Last.fm desde</span>
+                    <span class="stat-value" id="profile-since">—</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">País</span>
+                    <span class="stat-value" id="profile-country">—</span>
+                </div>
+            </div>
+        </section>
+
+        <p class="timeline-label">Timeline</p>
+        <nav id="timeline" aria-label="Selector de año"></nav>
+
+        <div class="share-btn-wrap">
+            <button class="share-btn" onclick="toggleShareMode()">
+                📸 Compartir Resumen
+            </button>
+        </div>
+
+    </aside>
+
+    <!-- ── Main content ──────────────────────────────── -->
+    <main class="main" id="main-content">
+        <button id="exit-share" style="display:none; position:fixed; top:20px; right:20px; z-index:100; padding:10px 20px; background:var(--surface2); border:1px solid var(--border); border-radius:30px; color:var(--text); cursor:pointer;" onclick="toggleShareMode()">
+            ✕ Salir de Modo Compartir
+        </button>
+
+        <!-- Year header -->
+        <header class="year-header">
+            <h1 class="year-number" id="year-title">—</h1>
+            <p class="year-sub">
+                <span class="year-scrobbles" id="year-scrobbles">...</span>
+            </p>
+        </header>
+
+        <!-- Stats grid: artists + tracks -->
+        <div class="stats-grid">
+
+            <!-- Top Artists -->
+            <section>
+                <h2 class="section-title">🎤 Top Artistas</h2>
+                <div class="card-list" id="artists-list">
+                    <!-- populated by JS -->
+                </div>
+            </section>
+
+            <!-- Top Tracks -->
+            <section>
+                <h2 class="section-title">🎵 Top Canciones</h2>
+                <div class="card-list" id="tracks-list">
+                    <!-- populated by JS -->
+                </div>
+            </section>
+
+            <!-- Top Albums -->
+            <section>
+                <h2 class="section-title">💿 Top Álbumes</h2>
+                <div class="card-list" id="albums-list">
+                    <!-- populated by JS -->
+                </div>
+            </section>
+
+            <!-- Top Genres -->
+            <section>
+                <h2 class="section-title">🏷️ Top Géneros</h2>
+                <div class="tags-cloud" id="genres-list">
+                    <!-- populated by JS -->
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Monthly activity chart -->
+        <section class="chart-section">
+            <h2 class="section-title">📊 Actividad mensual</h2>
+            <div class="chart-container" id="chart-bars">
+                <!-- bars populated by JS -->
+            </div>
+        </section>
+
+    </main>
+</div>
+
+<!-- ── Scripts ──────────────────────────────────────────── -->
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
