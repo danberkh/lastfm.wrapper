@@ -98,7 +98,9 @@ async function loadYear(year) {
         renderMonthlyChart(monthly);
     } catch (e) {
         console.error(`Error loading year ${year}:`, e);
-        $('year-content').innerHTML = `<p class="error-msg">Error cargando datos para ${year}. Reintentando...</p>`;
+        if ($('artists-list')) {
+            $('artists-list').innerHTML = `<p class="error-msg">Error cargando datos para ${year}.</p>`;
+        }
         showLoader(false);
     }
 }

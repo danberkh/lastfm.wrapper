@@ -175,6 +175,10 @@ async function getTopTracksForYear(year) {
         } catch { /* skip */ }
     }
 
+    const sorted = Object.values(trackCounts)
+        .sort((a, b) => b.plays - a.plays)
+        .slice(0, 5);
+
     Cache.set(cacheKey, sorted);
     return sorted;
 }
