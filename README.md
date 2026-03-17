@@ -16,4 +16,4 @@ Personalized music statistics website using the Last.fm API. Wraps all listening
 - Last.fm API
 
 ---
-*Created with :ukraine: for music fans.*
+*Created with :UA: for music fans.*
