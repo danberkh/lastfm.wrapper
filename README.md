@@ -1,6 +1,6 @@
-# Last.fm Wrapped 🎧
+# lastfm.wrapper 🎧
 
-Personalized music statistics website using the Last.fm API. 
+Personalized music statistics website using the Last.fm API. Wraps all listening last.fm reports in a "Spotify Wrapped" style interface.
 
 ## Features
 - **Yearly Timeline**: Browse your listening history from 2010 to current year.
@@ -13,7 +13,7 @@ Personalized music statistics website using the Last.fm API.
 ## Setup
 1. Clone the repository.
 2. Get your free Last.fm API key at [last.fm/api](https://www.last.fm/api/account/create).
-3. Add your API key and username in `js/config.js`.
+3. Add your API key and username in `js/config.js` (see `js/config.example.js`).
 4. Open `index.html` in your browser.
 
 ## Built with
